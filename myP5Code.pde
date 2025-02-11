@@ -20,7 +20,7 @@ setup = function() {
     drawFish2(random(70,400), random(20,300));
     drawFish2(random(35,370), random(20,300));
     drawPuffer(random(70,400), random(20,360));
-    drawShark((random(0,700), random(0,400));
+    drawShark(random(0,700), random(0,400));
 };
 
 //🟢draw Function - will run on repeat
@@ -29,7 +29,29 @@ draw = function(){
 };
 
 //🟢mouseClicked Function - will run when mouse is clicked
+var count=0;
 
+mouseClicked=function(){
+  if(count==0){
+    drawShark(300,300);
+    count=1;
+  }
+  else if(count==1){
+    drawShark(200,400);
+    count=2;
+  }
+  else if(count==2){
+    drawShark(150,200);
+    count=5;
+  }
+  else{
+    drawShark(random(0,700),random(0,400));
+    drawShark(random(0,700),random(0,400));
+    drawShark(random(0,700),random(0,400));
+    drawShark(random(0,700),random(0,400));
+    drawShark(random(0,700),random(0,400));
+  }
+  };
 
 //🟡drawFish Function - will run when called
 var drawFish = function(fishX, fishY){
@@ -50,27 +72,9 @@ var drawFish2 = function(fish2X, fish2Y){
 var drawPuffer = function(pufferX, pufferY){
   textSize(50);
   text("🐡", pufferX,pufferY);};
-  
 var drawShark=function(sharkX,sharkY){
-textsize(100);
-text("🦈", sharkX,sharkY);};
-  
-var count=0;
-  mouseClicked=function(){
-if(count==0){
-drawShark(random(0,700), random(0,400));
-count=1;
-};
-  else{(count==1)
-drawShark((random(0,700), random(0,400));
-count=2;
-};
-  else{
-drawShark(random(0,700), random(0,400));}
-};
-  
-
-
+  textSize(100);
+  text("🦈", sharkX,sharkY);};
 
 
 
